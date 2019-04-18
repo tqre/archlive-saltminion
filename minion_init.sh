@@ -1,0 +1,1 @@
+echo Minion initialization script
