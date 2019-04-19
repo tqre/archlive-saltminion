@@ -3,11 +3,11 @@
 echo Minion initialization script starting...
 
 cat > /etc/salt/minion << EOF
-master: $(cat master_ip)
+master: $(cat /tmp/minion/master_ip)
 id: $(hostname -i)
 EOF
 
-echo Master IP is set to $(cat master_ip)
+echo Master IP is set to $(cat tmp/minion/master_ip)
 echo Minion ID is $(hostname -i)
 
 echo Starting the salt-minion service...
