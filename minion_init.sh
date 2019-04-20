@@ -1,14 +1,14 @@
 #!/bin/bash
-# (C) 2019 Tuomo Kuure, GPL 3
 echo Minion initialization script starting...
 
 cat > /etc/salt/minion << EOF
 master: $(cat /tmp/minion/master_ip)
 id: $(hostname -i)
-#startup_states: sls_list
-#
-#sls_list:
-#  - onconnect
+
+startup_states: sls_list
+
+sls_list:
+  - onconnect
 
 EOF
 
