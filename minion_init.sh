@@ -5,6 +5,11 @@ echo Minion initialization script starting...
 cat > /etc/salt/minion << EOF
 master: $(cat /tmp/minion/master_ip)
 id: $(hostname -i)
+#startup_states: sls_list
+#
+#sls_list:
+#  - onconnect
+
 EOF
 
 echo Master IP is set to $(cat /tmp/minion/master_ip)
