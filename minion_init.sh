@@ -5,7 +5,7 @@ cat > /etc/salt/minion << EOF
 master: $(cat /tmp/minion/master_ip)
 id: $(hostname -i)
 
-startup_states: sls_list
+startup_states: sls
 
 sls_list:
   - onconnect
