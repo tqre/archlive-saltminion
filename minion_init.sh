@@ -1,7 +1,8 @@
 #!/bin/bash
 echo Minion initialization script starting...
 
-hostname minion@$(hostname -i)
+# Set minion hostname to last digits of it's IP address
+hostnamectl --static set-hostname min-$(hostname -i | sed 's/.*[.]//')
 
 cat > /etc/salt/minion << EOF
 master: $(cat /tmp/minion/master_ip)
