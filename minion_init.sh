@@ -1,5 +1,4 @@
 #!/bin/bash
-echo Minion initialization script starting...
 
 # Set minion hostname to last digits of it's IP address
 hostnamectl --static set-hostname min-$(hostname -i | sed 's/.*[.]//')
@@ -15,4 +14,5 @@ sls_list:
 
 EOF
 
+# Start the service
 systemctl start salt-minion
