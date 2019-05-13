@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Set minion hostname to last digits of it's IP address
+# Set minion hostname to it's IP address
 hostnamectl --static set-hostname min-$(hostname -i)
 
 # Make salt configuration file
