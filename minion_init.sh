@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set minion hostname to last digits of it's IP address
-hostnamectl --static set-hostname min-$(hostname -i | sed 's/.*[.]//')
+hostnamectl --static set-hostname min-$(hostname -i)
 
 # Make salt configuration file
 cat > /etc/salt/minion << EOF
